@@ -48,3 +48,20 @@ btnToTop.addEventListener("click", function() {
     behavior: "smooth"
   });
 });
+
+links = document.querySelectorAll("a")
+window.onhashchange = function(){
+  links.forEach (link => {
+   link.classList.remove("uactive")
+   })
+  aObject = document.getElementById(window.location.hash.split("#")[1] + "-nav")
+  aObject.classList.add("uactive")
+}
+
+window.onhashchange = function(){
+  sections.forEach(section =>{
+    section.classList.remove("your-active-class");
+  })
+  sectionBody = document.getElementById(window.location.hash.split("#")[1]);
+  sectionBody.classList.add("your-active-class")
+}
